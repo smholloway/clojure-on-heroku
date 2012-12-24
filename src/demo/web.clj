@@ -7,5 +7,5 @@
    :body "Hello from Clojure!\n"})
 
 (defn -main []
-  (let [port (Integer/parseInt (System/getenv "PORT"))]
+  (let [port (Integer/parseInt (or (System/getenv "PORT") "8080"))]
     (run-jetty app {:port port})))
